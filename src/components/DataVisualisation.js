@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { request } from '../helpers/api'
+import { totalValues } from '../helpers/helper'
 
 const DataVisualisation = () => {
   const [data, setData] = useState([])
@@ -7,8 +8,12 @@ const DataVisualisation = () => {
 
   useEffect(() => {
     const getData = async () => {
-      const result = await request()
-      setData(result)
+      const result = await request();
+      delete result?.current.data.TK1.message
+      delete result?.current.data.TK1.model_version
+      delete result?.current.data.TK1.time
+
+      result && setData(result?.current.data.TK1);
     }
 
     getData();
@@ -16,8 +21,21 @@ const DataVisualisation = () => {
 
   return(
     <>
-      {
-        console.log(data)
+      { 
+        <table>
+          <thead>
+            <th>Metric</th>
+            <th>Value</th>
+          </thead>
+          {
+            Object.keys(data).map(item => (
+              <tr key={item}>
+                <td>{item.replaceAll('_', ' ')}</td>
+                <td>{data[item].values && totalValues(data[item].values)}</td>
+              </tr>
+            ))
+          }
+        </table>
       }
     </>
   )
