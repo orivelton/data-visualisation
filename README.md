@@ -1,3 +1,11 @@
+
+
+
+Ok - For each entry in the object starting with TK1_ display in a table with the full metric name on one side and the last value in the corresponding values array on the other side:
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

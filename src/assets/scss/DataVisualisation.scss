@@ -7,3 +7,18 @@
   text-align: center;
   margin: 1em 0;
 }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0;
+  color: #4a4a4d;
+  font: 14px/1.4 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  tr {
+    &:nth-child(odd) {
+      background: #dcdcdc;
+    }
+    th, td {
+      padding: 0.5em;
+    }
+  }
+}
