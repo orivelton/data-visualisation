@@ -1,8 +1,7 @@
-const totalValues = (values) => {
-  if(!values) return;
-  let result = values.filter(item => item).reduce((a, b) => a + b, 0)
-  
-  return result;
+const totalValues = (values) => values.reduce((a, b) => a + b, 0)
+
+const filterValues = (data) => {
+  return Object.keys(data).filter(item => item.substring(0,3) === 'TK1');
 }
 
-export { totalValues };
+export { totalValues, filterValues };
