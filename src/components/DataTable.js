@@ -1,5 +1,5 @@
 import React from 'react';
-import { filterValues, totalValues } from '../helpers/helper';
+import { filterValues, formatStr } from '../helpers/helper';
 
 const DataTable = ({ data, caption }) => {
   return (
@@ -13,10 +13,10 @@ const DataTable = ({ data, caption }) => {
       </thead>
       <tbody>
         {
-          filterValues(data).map(item => (
-            <tr key={item}>
-              <td>{item.replaceAll('_', ' ')}</td>
-              <td>{totalValues(data[item].values)}</td>
+          data.length && data.map(({ name, value }) => (
+            <tr key={name}>
+              <td>{formatStr(name)}</td>
+              <td>{value[value.length -1]}</td>
             </tr>
           ))
         }
