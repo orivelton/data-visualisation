@@ -15,14 +15,18 @@ const DataVisualisation = () => {
     }
     
     getData();
-  }, [])
+  }, []);
 
   return (
     <>
       <h1 className="title-table" >Data Visualisation</h1>
-      <div className="table-box">
-        <DataTable data={current} caption="Current Data" />
-        <LineChart hAxisTitle="Current Data" vAxisTitle="Current Data" data={current} />
+      <div className="container">
+        <div className="container__box">
+          <DataTable data={current} caption="Current Data" />
+        </div>
+        <div className="container__box">
+          <LineChart hAxisTitle="Current Data" vAxisTitle="Current Data" data={current} />
+        </div>
       </div>
     </>
   )
