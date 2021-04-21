@@ -1,5 +1,5 @@
 import React from 'react';
-import { filterValues, formatStr } from '../helpers/helper';
+import { formatStr } from '../helpers/helper';
 
 const DataTable = ({ data, caption }) => {
   return (
