@@ -28,6 +28,6 @@ const LineChart = ({ data }) => {
       }}
     />
   )
-}
+};
     
 export default LineChart;

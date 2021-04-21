@@ -1,6 +1,6 @@
 import React from 'react';
 import { formatStr } from '../helpers/helper';
-import '../assets/scss/DataTable.scss'
+import '../assets/scss/DataTable.scss';
 
 const DataTable = ({ data, caption }) => (
   <table className="table-style">
@@ -22,6 +22,6 @@ const DataTable = ({ data, caption }) => (
       }
     </tbody>
   </table>
-)
+);
 
 export default DataTable;

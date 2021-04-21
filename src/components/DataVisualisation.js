@@ -30,6 +30,6 @@ const DataVisualisation = () => {
       </div>
     </>
   )
-}
+};
 
 export default DataVisualisation;
